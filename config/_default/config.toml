@@ -2,10 +2,10 @@ baseURL = "https://ayolaku.xyz"
 title = "The latest source of free Mockup PSD templates for your project"
 theme = "zzo"
 
-defaultContentLanguage = "id"
+defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
-disableLanguages = ['en']
+disableLanguages = ['id']
 
 summaryLength = 70
 buildFuture = false
