@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - HUGO
+      - Mockups Design
     subtitle:
-      - The world’s fastest framework for building websites
+      -  Site where you can find free premium mockups that can be used in your private and commercial work.
     titleColor: 
     titleShadow: true
     titleFontSize: 44
