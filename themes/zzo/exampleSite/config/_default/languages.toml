@@ -1,0 +1,14 @@
+[en]
+  title = "Hugo Zzo Theme"
+  languageName = "English"
+  weight = 1
+  languagedir = "ltr"
+  contentdir = "content/en"
+
+[id]
+  title = "Koleksi Resep Babi Kecap"
+  languageName = "Indonesian"
+  weight = 2
+  languagedir = "ltr"
+  contentdir = "content/id"
+

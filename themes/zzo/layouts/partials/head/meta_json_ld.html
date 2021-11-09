@@ -1,0 +1,65 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",{{ if .IsPage -}}{{ $author :=  or (.Params.author) (.Site.Author.name) }}{{ $org_name :=  .Site.Title }}
+    "@type": "Recipe", 
+    "name": "{{ .Title | safeJS }}",
+    "headline": "{{ .Title | safeJS }}",
+    "description": "{{ .Params.description }}",
+    "keywords": "{{ .Params.katakunci }}",
+    "recipeCuisine": "{{ .Params.recipecuisine }}",
+    "prepTime": "{{ .Params.preptime }}",
+    "cookTime": "{{ .Params.cooktime }}",
+    "recipeYield": "{{ .Params.recipeyield }}",
+    "recipeCategory": "{{ .Params.recipecategory }}",
+    "datePublished": "{{ dateFormat "2006-01-02" .Date }}",
+    "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "{{ .Params.ratingvalue }}",
+        "reviewCount": "{{ .Params.reviewcount }}"
+    },
+    "nutrition": {
+        "@type": "NutritionInformation",
+        "calories": "{{ .Params.nutrition }}"
+    },
+    "recipeIngredient": [{{ range $index, $ingredients := .Params.recipeingredient }}{{ if $index }},{{ end }}
+        "{{ $ingredients }}"{{ end }}
+        ],
+    "recipeInstructions": [{{ range $index, $instructions := .Params.recipeinstructions }}{{ if $index }},
+        {{ end }}{
+        "@type": "HowToStep",
+        "text": "{{ $instructions }}"
+        }{{ end -}}],
+    {{ else -}}
+    "@type": "WebPage",
+    "url" : {{ .Permalink }},
+    "name": {{ .Title }},
+    {{ with $.Param "description" -}}
+    "description": {{ . }},
+    {{ end -}}
+    {{ end -}}
+    {{ with $.Param "image" -}}
+    "image" : {{ . | absURL }},
+    {{ end -}}
+    {{ with $.Param "author" -}}
+    "author": {
+      "@type": "Person",
+      "name": {{ . }}
+    },
+    {{ end -}}
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": {{ .Site.BaseURL }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ .Site.Title  }},
+      {{ with $.Param "icon" -}}
+      "logo" : {
+        "@type": "ImageObject",
+        "url": {{ . | absURL }}
+      },
+      {{ end -}}
+      "url": {{ .Site.BaseURL }}
+    }
+  }
+</script>
