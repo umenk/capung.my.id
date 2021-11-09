@@ -5,7 +5,7 @@ theme = "zzo"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
 hasCJKLanguage = true
-disableLanguages = ['id']
+disableLanguages = ['en']
 
 summaryLength = 70
 buildFuture = false
