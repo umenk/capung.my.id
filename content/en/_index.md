@@ -25,9 +25,9 @@ header:
     paddingY: 0
     align: center
     title:
-      - Mockups Design
+      - Berita Terdepan
     subtitle:
-      -  Site where you can find free premium mockups that can be used in your private and commercial work.
+      -  Berita Terkini Terbaru hari Ini.
     titleColor: 
     titleShadow: true
     titleFontSize: 44
